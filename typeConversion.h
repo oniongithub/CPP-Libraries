@@ -10,22 +10,6 @@ namespace typeData {
 	};
 
 	template<typename T>
-	static inline returnType argInfo(T arg) noexcept
-	{
-		returnType returnedValue;
-
-		if (std::is_same<decltype(arg), bool>::value)
-			returnedValue.value = arg ? "true" : "false";
-		else
-			returnedValue.value = (std::string)arg;
-
-		returnedValue.size = sizeof(arg);
-		returnedValue.type = typeid(T).name();
-
-		return returnedValue;
-	}
-
-	template<typename T>
 	static inline std::string argValue(T arg) noexcept
 	{
 		if (std::is_same<decltype(arg), bool>::value)
@@ -44,5 +28,11 @@ namespace typeData {
 	static inline int argSize(T arg) noexcept
 	{
 		return sizeof(arg);
+	}
+
+	template<typename T>
+	static inline returnType argInfo(T arg) noexcept
+	{
+		return { argValue(arg), argType(arg), argSize(arg) };
 	}
 };
