@@ -1,6 +1,6 @@
 # C++ Libraries (Header Only)
 
-All libraries can be used in both x86 and x64. They support the newest Window's SDK version, and can be included and used without any effort.
+All libraries can be used in both x86 and x64. They support the newest Window SDK, and can be included and used without any effort.
 
 ## Libraries
 * **Console Colors** - Allows you to change the background and foreground color for your console.
