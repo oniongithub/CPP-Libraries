@@ -1,5 +1,5 @@
 #pragma once
-#define ALLOW_CONSOLE_COLORS FALSE;
+#define ALLOW_CONSOLE_COLORS TRUE;
 
 #include <string>
 #include <vector>
@@ -11,11 +11,11 @@
 #endif
 
 namespace textParsing {
-	static inline std::vector<int> parseIndexes(std::string text, std::string parseChar = "&") noexcept
+	static inline std::vector<size_t> parseIndexes(std::string text, std::string parseChar = "&") noexcept
 	{
-		std::vector<int> returnedIndexes;
+		std::vector<size_t> returnedIndexes;
 
-		for (int i = 0; i < text.size(); i++) {
+		for (size_t i = 0; i < text.size(); i++) {
 			if (text[i] == parseChar[0]) 
 				returnedIndexes.push_back(i);
 		}
@@ -54,9 +54,9 @@ namespace textParsing {
 	{
 		auto parseLocations = parseIndexes(text, parseChar);
 
-		for (int i = 0; i < parseLocations.size(); i++)
+		for (size_t i = 0; i < parseLocations.size(); i++)
 		{
-			for (int f = 0; f < parseColorCodes.size(); f++)
+			for (size_t f = 0; f < parseColorCodes.size(); f++)
 			{
 				if (text.size() >= parseLocations[i] + 1)
 				{
