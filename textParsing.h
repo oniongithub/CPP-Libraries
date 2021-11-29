@@ -62,7 +62,7 @@ namespace textParsing {
 				{
 					if (parseColorCodes[f].colorCode[0] == text[parseLocations[i] + 1])
 					{
-						conColors::setForeground(parseColorCodes[f].r, parseColorCodes[f].g, parseColorCodes[f].b, f);
+						conColors::setForeground(parseColorCodes[f].r, parseColorCodes[f].g, parseColorCodes[f].b, (int)f);
 
 						if (parseLocations.size() > i + 1) {
 							std::cout << text.substr(parseLocations[i] + 2, parseLocations[i + 1] - (parseLocations[i] + 2));
